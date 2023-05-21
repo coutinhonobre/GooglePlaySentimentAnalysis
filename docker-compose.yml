@@ -1,0 +1,17 @@
+version: '3'
+services:
+  opencv:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - /Users/coutinhonobre/Projects/IA/webScrappingGoogle:/app
+    command: ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=''"]
+    environment:
+      - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+      - JUPYTER_PASSWORD=${JUPYTER_PASSWORD}
+      - JUPYTER_NOTEBOOK_DIR=/home/jovyan/work
+      - NB_UID=1000
+      - NB_GID=100
+      - GRANT_SUDO=yes
+    user: root
