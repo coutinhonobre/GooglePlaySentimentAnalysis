@@ -1,7 +1,8 @@
 version: '3'
 services:
-  opencv:
+  tensorflow:
     build: .
+    runtime: nvidia
     ports:
       - "8888:8888"
     volumes:
