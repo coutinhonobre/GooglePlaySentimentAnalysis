@@ -1,9 +1,16 @@
-# Use a imagem oficial do Python 3.9 como base
-FROM python:3.9
+# Imagem base
+FROM nvidia/cuda:11.0-base
 
 # Defina as variáveis de ambiente para desativar a configuração interativa
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Sao_Paulo
+
+# Atualiza o sistema e instala as dependências
+RUN apt-get update && apt-get install -y \
+    python3-pip
+
+# Instala o tensorflow-gpu
+RUN pip3 install tensorflow-gpu==2.4
 
 # Mantenha o sistema operacional atualizado
 RUN apt-get update -y && apt-get upgrade -y
