@@ -1,5 +1,5 @@
 # Imagem base
-FROM nvidia/cuda:latest
+FROM nvidia/cuda:11.0-base
 
 # Defina as variáveis de ambiente para desativar a configuração interativa
 ENV DEBIAN_FRONTEND=noninteractive
