@@ -1,5 +1,5 @@
 # Imagem base
-FROM nvcr.io/nvidia/tensorflow:laster
+FROM tensorflow/tensorflow:latest-gpu-jupyter
 
 # Defina as variáveis de ambiente para desativar a configuração interativa
 ENV DEBIAN_FRONTEND=noninteractive
