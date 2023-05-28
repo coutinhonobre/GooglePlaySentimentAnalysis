@@ -14,6 +14,7 @@ RUN apt-get update -y && apt-get upgrade -y
 
 # Instale os pacotes necessários
 RUN apt-get install -y build-essential libsm6 libxext6 libxrender-dev git libgtk2.0-dev pkg-config
+RUN pip3 install --upgrade pip && pip3 install -U cupy
 
 # Defina o diretório de trabalho
 WORKDIR /app
